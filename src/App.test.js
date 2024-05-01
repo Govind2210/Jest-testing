@@ -2,8 +2,16 @@ import { render , screen } from "@testing-library/react";
 import App from "./App";
 
 /**
- * To have Attribute is used for checking the Attribute in the given Tags
+ * Press a to run all tests.
+ › Press f to quit "only failed tests" mode.
+ › Press o to only run tests related to changed files.
+ › Press q to quit watch mode.
+ › Press p to filter by a filename regex pattern.
+ › Press t to filter by a test name regex pattern.
+ › Press Enter to trigger a test run.
  */
+
+
 
 test("testing the input field",()=>{
   render(<App/>); // import app
