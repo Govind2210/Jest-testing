@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1>Hook testing</h1>
+        <h1>SJest testing!</h1>
         <button
           onClick={() => {
             setClick("UPDATED DATA!!!!");
