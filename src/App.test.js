@@ -1,21 +1,15 @@
 import App from './App'
 const { screen, render } = require("@testing-library/react")
 
-test("Get All by Role" , ()=>{
+test("Get All by Role test 1" , ()=>{
   render(<App />);
-  const button1 = screen.getAllByRole("button");
-  // one way to give index to tetsing
-  expect(button1[0]).toBeInTheDocument()
+  const inputField = screen.getByLabelText("User Name")
+  expect(inputField).toBeInTheDocument();
+  expect(inputField).toHaveValue("gogo")
+})
 
-  // another way is itering in the loop
-  for(let i = 0 ; i < button1.length ; i++ ){
-    expect(button1[i]).toBeInTheDocument()
-  }
-
-  // testing for select
-  const options = screen.getAllByRole("option")
-
-  for(let i = 0 ; i < options.length ; i++ ){
-    expect(options[i]).toBeInTheDocument()
-  }
+test("Get All by  test 2" , ()=>{
+  render(<App />);
+  const checkBox = screen.getByLabelText("Skills")
+  expect(checkBox).toBeInTheDocument();
 })
