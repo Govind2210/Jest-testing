@@ -1,11 +1,13 @@
+import userEvent from "@testing-library/user-event";
 import App from "./App";
 const { screen, render, within } = require("@testing-library/react");
 
-test("within - Querying Within Elements", () => {
+test("within - Click Event with User Event Library", async () => {
+  userEvent.setup();
   render(<App />);
-  let el = screen.getByText('Hello World');
-  let subEl = within(el).getByText('Hi')
-  expect(el).toBeInTheDocument();
-  expect(subEl).toBeInTheDocument();
-  
+  const btn = screen.getByText("Cick Me");
+  await userEvent.click(btn);
+  expect(
+    screen.getByText("RTQ - Click Event with User Event Library")
+  ).toBeInTheDocument();
 });
