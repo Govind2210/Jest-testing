@@ -1,19 +1,28 @@
 import App from "./App";
-const { screen, render, configure } = require("@testing-library/react");
+const { screen, render } = require("@testing-library/react");
 
-configure({ testIdAttribute: "element-id" });
-
-test("Single - getByDisplayValue", () => {
+test("Single - List of Postive -  Assertion Methods", () => {
   render(<App />);
-  const newInput = screen.getByDisplayValue("gogo");
-  expect(newInput).toBeInTheDocument();
+  const newInput = screen.getByRole("textbox");
+  // test case for Assertion methods
 
-  const textArea = screen.getByDisplayValue("govind L");
-  expect(textArea).toBeInTheDocument();
+  expect(newInput).toBeInTheDocument();
+  expect(newInput).toHaveValue();
+  expect(newInput).toHaveValue("gogo");
+  expect(newInput).toBeEnabled();
+  // expect(newInput).toBeDisabled(); // if its disabled
+  expect(newInput).toHaveAttribute("id");
+  expect(newInput).toHaveAttribute("data-test");
+  expect(newInput).toHaveClass("test-style");
+  expect(newInput).toHaveClass("dummy");
 });
 
-test("Single - radio - getByDisplayValue", () => {
+test("Single - List of negative -  Assertion Methods", () => {
   render(<App />);
-  const newRadio = screen.getByDisplayValue("male");
-  expect(newRadio).toBeInTheDocument();
+  const btn = screen.getByRole("button");
+  // test case for Assertion methods
+  expect(btn).toBeInTheDocument();
+  // expect(btn).toHaveClass('btn');
+  expect(btn).not.toHaveClass("btn"); // it wil work when class name is difffent then the given one
+  expect(btn).not.toHaveAttribute("id"); //same it will check for id and if it found it will give error
 });
