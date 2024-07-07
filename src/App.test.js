@@ -1,19 +1,18 @@
 import App from "./App";
 const { screen, render } = require("@testing-library/react");
 
-test("SIngle - getAllByText", () => {
+test("SIngle - getByTestId", () => {
   render(<App />);
-  const btn = screen.getByText("Login");
-  const pTag = screen.getByText("P tag Testing");
-  expect(btn).toBeInTheDocument();
-  expect(pTag).toBeInTheDocument();
+  const testingId = screen.getByTestId("div-test-h1");
+  expect(testingId).toBeInTheDocument();
 });
 
-test("multiple - getAllByText", () => {
+test("Multiple - getAllByTestId", () => {
   render(<App />);
-  const Htags = screen.getAllByText("RTQ - getByText and getAllByText");
-
-  for (let i = 0; i < Htags.length; i++) {
-    expect(Htags[i]).toBeInTheDocument();
+  const testingIds = screen.getAllByTestId("div-test-id");
+  
+  for(let i = 0 ; i < testingIds.length ; i++ ){
+    expect(testingIds[i]).toBeInTheDocument();
   }
+
 });
