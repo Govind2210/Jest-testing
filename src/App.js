@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import { Usr } from "./Usr";
 
 function App() {
   const [data, setData] = useState("");
@@ -7,16 +8,9 @@ function App() {
     <>
       <div className="App">
         <h1 id="divtextOne" data-testid="div-test-h2">
-          Act function
+          Test component Props
         </h1>
-        {<h1>{data}</h1>}
-        <input
-          type="text"
-          onChange={(e) => {
-            setData(e.target.value);
-          }}
-          placeholder="Name"
-        />
+        <Usr name={"gogo"} />
       </div>
     </>
   );
