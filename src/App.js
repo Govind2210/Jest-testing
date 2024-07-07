@@ -4,12 +4,9 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1>RTQ - getByText and getAllByText</h1>
-        <h1>RTQ - getByText and getAllByText</h1>
-        <h1>RTQ - getByText and getAllByText</h1>
-        <h1>RTQ - getByText and getAllByText</h1>
-        <button>Login</button>
-        <p>P tag Testing</p>
+        <h1 data-testid="div-test-h1">RTQ - getByTestId and getAllByTestId</h1>
+        <div data-testid="div-test-id">Testing ID 1</div>
+        <div data-testid="div-test-id">Testing ID 2</div>
       </div>
     </>
   );
