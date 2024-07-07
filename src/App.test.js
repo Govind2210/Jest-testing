@@ -1,10 +1,11 @@
-/* eslint-disable testing-library/no-node-access */
 import App from "./App";
-const { screen, render } = require("@testing-library/react");
+const { screen, render, within } = require("@testing-library/react");
 
-test("Elements with JavaScript - Custom Query", () => {
+test("within - Querying Within Elements", () => {
   render(<App />);
-  const element = document.querySelector("#divtext");
-  expect(element).toBeInTheDocument();
-  expect(element).toHaveTextContent('Hello World');
+  let el = screen.getByText('Hello World');
+  let subEl = within(el).getByText('Hi')
+  expect(el).toBeInTheDocument();
+  expect(subEl).toBeInTheDocument();
+  
 });
