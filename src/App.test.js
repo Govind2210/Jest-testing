@@ -1,16 +1,20 @@
-import { render, screen } from "@testing-library/react";
-import App from "./App";
+import App from './App'
+const { screen, render } = require("@testing-library/react")
 
-test("tetsing the RTQ - get by role", () => {
+test("btn 1 test - get by role test" , ()=>{
   render(<App />);
-  const inputField = screen.getByRole("textbox");
-  expect(inputField).toBeInTheDocument();
-  expect(inputField).toHaveValue("hello")
-});
+  // simentic element testing
+  const btn1 = screen.getByRole("button" ,{name:"Click One"});
+  const btn2 = screen.getByRole("button" ,{name:"Click two"});
+  const input1 = screen.getByRole("textbox" , {name:"User Name"})
+  const input2 = screen.getByRole("textbox" , {name:"User Age"})
 
-test("button testing", () => {
-  render(<App />);
-  const buttonClick = screen.getByRole("button");
-  expect(buttonClick).toBeInTheDocument();
- 
-});
+  expect(btn1).toBeInTheDocument();
+  expect(btn2).toBeInTheDocument();
+  expect(input1).toBeInTheDocument();
+  expect(input2).toBeInTheDocument();
+
+  // non - simentic element
+  const div1 = screen.getByRole("dummy");
+  expect(div1).toBeInTheDocument();
+})
