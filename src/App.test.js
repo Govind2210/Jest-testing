@@ -1,18 +1,11 @@
 import App from "./App";
-const { screen, render } = require("@testing-library/react");
+const { screen, render , configure } = require("@testing-library/react");
 
-test("SIngle - getByTestId", () => {
+configure({testIdAttribute: 'element-id'})
+
+test("Single - Overriding data-testid", () => {
   render(<App />);
-  const testingId = screen.getByTestId("div-test-h1");
-  expect(testingId).toBeInTheDocument();
+  const testingH1 = screen.getByTestId("div-test-h1");
+  expect(testingH1).toBeInTheDocument();
 });
 
-test("Multiple - getAllByTestId", () => {
-  render(<App />);
-  const testingIds = screen.getAllByTestId("div-test-id");
-  
-  for(let i = 0 ; i < testingIds.length ; i++ ){
-    expect(testingIds[i]).toBeInTheDocument();
-  }
-
-});
