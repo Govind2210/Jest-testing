@@ -4,20 +4,21 @@ function App() {
   return (
     <>
       <div className="App">
-        {/* simentic element  */}
-        <h1>Multiple role with Element</h1>
-        <h1>Custom Role</h1>
-        <button>Click One</button>
-        <button>Click two</button>
-        <label htmlFor="userName">User Name</label>
-        <input type="text" id="userName"/>
-        <label htmlFor="userAge">User Age</label>
-        <input type="text" id="userAge"/>
+       <h1>RTL Query : Get All By Role</h1>
+       <button>Click ME</button>
+       <button>Click ME</button>
+       <button>Click ME</button>
+       <button>Click ME</button>
+       <button>Click ME</button>
+       <button>Click ME</button>
+       <button>Click ME</button>
 
-        {/* non - simentic element  */}
-        <div role="dummy">
-          dummy test
-        </div>
+      {/* testing for the option  */}
+       <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+       </select>
       </div>
     </>
   );
