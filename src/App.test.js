@@ -1,15 +1,17 @@
 import App from './App'
 const { screen, render } = require("@testing-library/react")
 
-test("Get All by Role test 1" , ()=>{
+test("Get All by Label text 1 test" , ()=>{
   render(<App />);
-  const inputField = screen.getByLabelText("User Name")
-  expect(inputField).toBeInTheDocument();
-  expect(inputField).toHaveValue("gogo")
-})
+  const inputs = screen.getAllByLabelText('User Name:');
+  expect(inputs[0]).toBeInTheDocument()
+  expect(inputs[1]).toBeInTheDocument()
+  expect(inputs[2]).toBeInTheDocument()
 
-test("Get All by  test 2" , ()=>{
-  render(<App />);
-  const checkBox = screen.getByLabelText("Skills")
-  expect(checkBox).toBeInTheDocument();
+  for(let i = 0 ; i < inputs.length ; i++){
+    expect(inputs[i]).toHaveAttribute('type','text')
+    expect(inputs[i]).toBeInTheDocument()
+    expect(inputs[i]).toHaveValue("gogo")
+  }
+
 })
