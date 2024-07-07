@@ -2,15 +2,15 @@ import { useState } from "react";
 import "./App.css";
 import { Usr } from "./Usr";
 
-function App() {
+function App(props) {
   const [data, setData] = useState("");
   return (
     <>
       <div className="App">
         <h1 id="divtextOne" data-testid="div-test-h2">
-          Test component Props
+        Functional Props Testing and Function Mocking
         </h1>
-        <Usr name={"gogo"} />
+        <button onClick={props.testFunction}>Click</button>
       </div>
     </>
   );
