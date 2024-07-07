@@ -4,10 +4,13 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1>RTQ - getByPlaceholderText</h1>
-        <label htmlFor="user-name">User Name:</label>
-        <input type="text" id="user-name" placeholder="Enter User Name" />
-       </div>
+        <h1>RTQ - getByText and getAllByText</h1>
+        <h1>RTQ - getByText and getAllByText</h1>
+        <h1>RTQ - getByText and getAllByText</h1>
+        <h1>RTQ - getByText and getAllByText</h1>
+        <button>Login</button>
+        <p>P tag Testing</p>
+      </div>
     </>
   );
 }

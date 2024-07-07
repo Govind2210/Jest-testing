@@ -1,8 +1,19 @@
-import App from './App'
-const { screen, render } = require("@testing-library/react")
+import App from "./App";
+const { screen, render } = require("@testing-library/react");
 
-test("Get placeHoler test" , ()=>{
+test("SIngle - getAllByText", () => {
   render(<App />);
-  const textPlaceHolder = screen.getByPlaceholderText("Enter User Name");
-  expect(textPlaceHolder).toBeInTheDocument();
-})
+  const btn = screen.getByText("Login");
+  const pTag = screen.getByText("P tag Testing");
+  expect(btn).toBeInTheDocument();
+  expect(pTag).toBeInTheDocument();
+});
+
+test("multiple - getAllByText", () => {
+  render(<App />);
+  const Htags = screen.getAllByText("RTQ - getByText and getAllByText");
+
+  for (let i = 0; i < Htags.length; i++) {
+    expect(Htags[i]).toBeInTheDocument();
+  }
+});
