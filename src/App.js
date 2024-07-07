@@ -2,20 +2,17 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [data, setData] = useState("RTQ - Click Event with User");
+  const [data, setData] = useState("");
   return (
     <>
       <div className="App">
         <h1 id="divtextOne" data-testid="div-test-h2">
-          {data}
+          onChange Event Testing | Keyboard Interactions
         </h1>
-        <button
-          onClick={() => {
-            setData("RTQ - Click Event with User Event Library");
-          }}
-        >
-          Cick Me
-        </button>
+        {
+          <h1>{data}</h1>
+        }
+        <input type="text" onChange={(e)=>{setData(e.target.value)}} placeholder="Name" />
       </div>
     </>
   );
