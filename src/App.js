@@ -5,10 +5,15 @@ function App() {
     <>
       <div className="App">
         <h1 element-id="div-test-h1" data-testid="div-test-h2">
-          RTQ - Overriding data-testid
+          RTQ - getByDisplayValue and getAllByDisplayValue
         </h1>
-        <div data-testid="div-test-id">Testing ID 1</div>
-        <div data-testid="div-test-id">Testing ID 2</div>
+        <input type="text" defaultValue={"gogo"} />
+        <br />
+        <br />
+        <textarea defaultValue={"govind L"} />
+        <br />
+        <br />
+        <input type="radio" defaultValue={"male"} />
       </div>
     </>
   );
