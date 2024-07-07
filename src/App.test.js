@@ -1,13 +1,10 @@
+/* eslint-disable testing-library/no-node-access */
 import App from "./App";
 const { screen, render } = require("@testing-library/react");
 
-test("findBy and findAllBy", async () => {
+test("Elements with JavaScript - Custom Query", () => {
   render(<App />);
-  // this will not check the value which take time 
-  // const el = screen.getByText('Data Found')
-  // expect(el).toBeInTheDocument();
-
-  // findBy can check the value which take time
-  const el = await screen.findByText('Data Found')
-  expect(el).toBeInTheDocument();
+  const element = document.querySelector("#divtext");
+  expect(element).toBeInTheDocument();
+  expect(element).toHaveTextContent('Hello World');
 });
