@@ -1,9 +1,13 @@
 import App from "./App";
 const { screen, render } = require("@testing-library/react");
 
-test("QueryBy - and - QueryAllBy", () => {
+test("findBy and findAllBy", async () => {
   render(<App />);
-  // const btn1 = screen.getByText("Login");
-  const btn1 = screen.queryByText("Login");
-  expect(btn1).not.toBeInTheDocument();
+  // this will not check the value which take time 
+  // const el = screen.getByText('Data Found')
+  // expect(el).toBeInTheDocument();
+
+  // findBy can check the value which take time
+  const el = await screen.findByText('Data Found')
+  expect(el).toBeInTheDocument();
 });
